@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView, TemplateView
 
-# Create your views here.
+
+class HomeTemplateView(TemplateView):
+    """main page
+    List of all images
+    """
+    template_name = 'home/home.html'
