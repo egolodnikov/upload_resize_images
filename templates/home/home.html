@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+    <a href="{% url 'upload' %}">UPLOAD</a>
     {% for object in object_list %}
-        <td>{{ object.name }}</td>
+        <ul>
+            <li>{{ object.name }}</li>
+            <li>
+                <img src="{{ object.image.url }}"  alt="{{ object.name }}"/>
+            </li>
+        </ul>
     {% endfor %}
-    upload
 {% endblock %}

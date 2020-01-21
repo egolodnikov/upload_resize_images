@@ -11,8 +11,14 @@ class UploadImage(models.Model):
     height = models.PositiveSmallIntegerField(
         default=0
     )
-    url = models.URLField()
+    url = models.URLField(
+        max_length=100,
+        blank=True
+    )
     image = models.ImageField(
         upload_to='images/'
     )
+
+    def __str__(self):
+        return self.name
 
