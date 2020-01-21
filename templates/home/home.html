@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <ul>
-    <li>
-        image
-    </li>
-    <li>
-        upload
-    </li>
-    </ul>
+    {% for object in object_list %}
+        <td>{{ object.name }}</td>
+    {% endfor %}
+    upload
 {% endblock %}
