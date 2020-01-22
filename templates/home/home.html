@@ -4,16 +4,24 @@
     {% for object in object_list %}
         {% if object.image %}
             <ul>
-                <li>{{ object.name }}</li>
+                <li>
+                    <a href="{% url 'image-detail' object.pk %}">
+                        {{ object.name }}
+                    </a>
+                </li>
                 <li>
                     <img src="{{ object.image.url }}" width="300" height="200" alt="{{ object.name }}"/>
                 </li>
             </ul>
         {% else %}
             <ul>
-                <li>{{ object.name }}</li>
                 <li>
-                    <img src="" width="300" height="200" alt="{{ object.name }}"/>
+                    <a href="{% url 'image-detail' object.pk %}">
+                        {{ object.name }}
+                    </a>
+                </li>
+                <li>
+                    Image not found
                 </li>
             </ul>
         {% endif %}

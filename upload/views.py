@@ -11,13 +11,13 @@ from upload.forms import UploadImageForm
 
 class ImageCreateView(FormView):
     form_class = UploadImageForm
-    template_name = 'upload/form_add.html'
+    template_name = 'home/home.html'
     success_url = reverse_lazy('upload')
 
     def form_valid(self, form):
         if form.cleaned_data['url']:
             # splice name
-            image_name = form.cleaned_data['url'].split('/')[-1]
+            image_name = form.cleaned_data['url'].split('/')[-1].split('?')[0]
             # create symlink in file system
             file_storage = f'{MEDIA_ROOT}/images/{image_name}'
             # create symlink in images/
