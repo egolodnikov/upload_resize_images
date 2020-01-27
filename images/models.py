@@ -18,6 +18,9 @@ class UploadImage(models.Model):
     image = models.ImageField(
         upload_to='images/'
     )
+    resize_image = models.ImageField(
+        blank=True
+    )
 
     def __str__(self):
         return self.name

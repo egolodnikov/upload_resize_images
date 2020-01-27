@@ -44,4 +44,3 @@ class ImageCreateView(FormView):
                 'upload'
             )
         )
-
