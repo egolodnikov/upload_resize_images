@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'images',
-    'upload'
+    'upload',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'ur_images.urls'
@@ -136,3 +138,9 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]

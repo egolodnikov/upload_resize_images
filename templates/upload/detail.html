@@ -13,8 +13,8 @@
                     {{ form.as_p }}
                     <input type="submit" value="Resize">
                 </form>
-                {% if resize_image %}
-                    <img src="{{ resize_image }}"/>
+                {% if object.resize_image %}
+                    <img src="{{ object.resize_image.url }}"/>
                 {% else %}
                     <li>
                         Resize image not found
