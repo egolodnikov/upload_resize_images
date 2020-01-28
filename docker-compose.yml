@@ -1,0 +1,16 @@
+version: '2'
+services:
+  Memcached:
+    image: sameersbn/memcached:1.5.6-2
+    ports:
+      - "11211:11211"
+    restart: always
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - Memcached
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app:Z
